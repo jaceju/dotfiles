@@ -56,21 +56,7 @@ ld () {
 		source $FILE
 	fi
 }
-
-run() {
-    number=$1
-    shift
-    for i in `seq $number`; do
-      $@
-    done
-}
-
-fo() {
-	branch_name=$(git symbolic-ref -q HEAD)
-	branch_name=${branch_name##refs/heads/}
-	branch_name=${branch_name:-HEAD}
-	git push origin +$branch_name
-}
+ld "$HOME/.dotfiles/zsh/partials/function.sh"
 
 ##############################
 # Alias
@@ -80,10 +66,9 @@ ld "$HOME/.dotfiles/zsh/partials/alias.sh"
 ##############################
 # Environment Variables
 ##############################
-#export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=/usr/local/sbin:bin:vendor/bin:node_modules/.bin:$HOME/.composer/vendor/bin:$HOME/.bin:$PATH
-#export REDIS_HOST="127.0.0.1"
-#export REDIS_PORT=6379
+export REDIS_HOST="127.0.0.1"
+export REDIS_PORT=6379
 export APP_ENV="local"
 
 ##############################
