@@ -2,8 +2,18 @@
 # Functions
 ##############################
 
+## 切換到專案目錄
+pcd() {
+    cd ~/Projects/$1
+}
+
 ## 切換到 KKBOX 專案目錄
 kcd() {
+    cd ~/Projects/kkbox/$1
+}
+
+## 切換到 GOEZ 專案目錄
+gcd() {
     cd ~/Projects/kkbox/$1
 }
 
