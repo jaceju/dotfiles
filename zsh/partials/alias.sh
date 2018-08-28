@@ -23,6 +23,11 @@ alias cogs='comopser global show'
 alias cls='clear'
 alias l1="ls -1"
 alias t2="tree -L 2"
+alias cat="bat"
+alias ping="prettyping"
+alias top="sudo htop"
+alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+alias help="tldr"
 
 ####################
 # Mac
