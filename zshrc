@@ -80,3 +80,8 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # added by travis gem
 ##############################
 [ -f /Users/jaceju/.travis/travis.sh ] && source /Users/jaceju/.travis/travis.sh
+
+##############################
+# Fzf settings
+##############################
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
