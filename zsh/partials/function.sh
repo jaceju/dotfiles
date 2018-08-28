@@ -12,11 +12,6 @@ kcd() {
     cd ~/Projects/kkbox/$1
 }
 
-## 切換到 GOEZ 專案目錄
-gcd() {
-    cd ~/Projects/kkbox/$1
-}
-
 ## 執行多次指令
 run() {
     number=$1
