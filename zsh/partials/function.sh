@@ -28,3 +28,13 @@ fo() {
 	branch_name=${branch_name:-HEAD}
 	git push origin +$branch_name
 }
+
+## 遞迴刪除資料夾
+rrmd() {
+    find . -type d -name "$1" | xargs rm -rf
+}
+
+## 遞迴刪除檔案
+rrmf() {
+    find . -type f -name "$1" | xargs rm -f
+}
