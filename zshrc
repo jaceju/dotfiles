@@ -40,7 +40,24 @@ ZSH_THEME="taybalt"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git wd zsh-autosuggestions zsh-syntax-highlighting brew)
+plugins=(
+    brew
+    git 
+    wd 
+    zsh-autosuggestions 
+    zsh-syntax-highlighting
+    composer
+)
+
+##############################
+# Artisan plugin variables
+##############################
+ARTISAN_OPEN_ON_MAKE_EDITOR=pst # PHPStorm
+
+##############################
+# Dotfiles partials
+##############################
+PARTIALS="$HOME/.dotfiles/zsh/partials"
 
 ##############################
 # Oh my zsh
@@ -50,38 +67,42 @@ source $ZSH/oh-my-zsh.sh
 ##############################
 # Functions
 ##############################
-ld () {
-	FILE=${1}
-	if [ -f "$FILE" ]; then
-		source $FILE
-	fi
-}
-ld "$HOME/.dotfiles/zsh/partials/function.sh"
+source "$PARTIALS/function.sh"
 
 ##############################
 # Alias
 ##############################
-ld "$HOME/.dotfiles/zsh/partials/alias.sh"
+source "$PARTIALS/alias.sh"
 
 ##############################
 # Environment Variables
 ##############################
+export CURL_CA_BUNDLE=${HOME}/.config/valet/CA/LaravelValetCASelfSigned.pem
 export PATH=/usr/local/sbin:bin:vendor/bin:node_modules/.bin:$HOME/.composer/vendor/bin:$HOME/.bin:$PATH
 export REDIS_HOST="127.0.0.1"
 export REDIS_PORT=6379
 export APP_ENV="local"
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
 ##############################
 # Iterm 2
 ##############################
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+[ -f "${HOME}/.iterm2_shell_integration.zsh" ] && source "${HOME}/.iterm2_shell_integration.zsh"
+
+##############################
+# Z jump
+##############################
+[ -f "/usr/local/etc/profile.d/z.sh" ] && . /usr/local/etc/profile.d/z.sh
 
 ##############################
 # added by travis gem
 ##############################
-[ -f /Users/jaceju/.travis/travis.sh ] && source /Users/jaceju/.travis/travis.sh
+[ -f "${HOME}/.travis/travis.sh" ] && source ${HOME}/.travis/travis.sh
 
 ##############################
 # Fzf settings
 ##############################
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f "${HOME}/.fzf.zsh" ] && source ${HOME}/.fzf.zsh
