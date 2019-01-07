@@ -1,10 +1,18 @@
 #!/bin/bash
 
 ####################
+# Mac
+####################
+alias ls="exa"
+alias bps="brew-php-switcher"
+alias bench="hyperfine"
+
+####################
 # Composer
 ####################
 alias comopser='env composer'
 alias co='comopser'
+alias cocc='comopser clear-cache'
 alias coi='comopser install'
 alias cou='comopser update'
 alias cor='comopser require'
@@ -12,6 +20,7 @@ alias cos='comopser show'
 alias cod='comopser dump'
 alias coe='comopser run-script'
 alias coc='comopser create-project'
+alias cow='composer why'
 alias cogi='comopser global install'
 alias cogu='comopser global update'
 alias cogr='comopser global require'
@@ -28,12 +37,6 @@ alias ping="prettyping"
 alias top="sudo htop"
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 alias help="tldr"
-
-####################
-# Mac
-####################
-alias brew="env PATH=${PATH}:${HOME}/.composer/vendor/bin:${HOME}/.bin brew"
-alias bps="brew-php-switcher"
 
 ####################
 # Laravel
@@ -60,13 +63,13 @@ alias bh="behat"
 ####################
 # Npm
 ####################
-alias nb="npm run build"
-alias nbf="npm run build:force"
-alias nbr="npm run test:browser"
-alias nc="npm run test:cover"
-alias nd="npm run dev"
-alias ndm="npm run dev:mock"
-alias ne="npm run test:e2e"
-alias nt="npm test"
-alias ntn="npm test test/node/**/*.test.ts"
-alias nu="npm run test:unit"
+# alias nb="npm run build"
+# alias nbf="npm run build:force"
+# alias nbr="npm run test:browser"
+# alias nc="npm run test:cover"
+# alias nd="npm run dev"
+# alias ndm="npm run dev:mock"
+# alias ne="npm run test:e2e"
+# alias nt="npm test"
+# alias ntn="npm test test/node/**/*.test.ts"
+# alias nu="npm run test:unit"
