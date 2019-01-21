@@ -6,6 +6,7 @@
 alias ls="exa"
 alias bps="brew-php-switcher"
 alias bench="hyperfine"
+alias readlink="greadlink" # from coreutils
 
 ####################
 # Composer
@@ -56,7 +57,8 @@ alias dkc="docker-compose"
 ####################
 alias pu="phpunit"
 alias puf="phpunit --filter"
-alias puc="pu --coverage-html=coverage-report"
+alias puw="phpunit-watcher watch"
+alias puc="phpunit --coverage-html=coverage-report"
 alias psp="phpspec"
 alias bh="behat"
 
