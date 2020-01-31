@@ -42,11 +42,12 @@ ZSH_THEME="taybalt"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
     brew
-    git 
-    wd 
-    zsh-autosuggestions 
+    git
+    wd
+    zsh-autosuggestions
     zsh-syntax-highlighting
     composer
+    ssh-agent
 )
 
 ##############################
@@ -58,6 +59,12 @@ ARTISAN_OPEN_ON_MAKE_EDITOR=pst # PHPStorm
 # Dotfiles partials
 ##############################
 PARTIALS="$HOME/.dotfiles/zsh/partials"
+
+##############################
+# ssh-agent
+##############################
+zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa_kkbox
+zstyle :omz:plugins:ssh-agent lifetime 72h
 
 ##############################
 # Oh my zsh
@@ -107,3 +114,8 @@ export HISTTIMEFORMAT="%d/%m/%y %T "
 # Fzf settings
 ##############################
 [ -f "${HOME}/.fzf.zsh" ] && source ${HOME}/.fzf.zsh
+
+##############################
+# Thefuck
+##############################
+[ -f "/usr/local/bin/thefuck" ] && eval $(thefuck --alias)
