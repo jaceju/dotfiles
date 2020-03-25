@@ -75,6 +75,7 @@ source $ZSH/oh-my-zsh.sh
 # Functions
 ##############################
 source "$PARTIALS/function.sh"
+source "$PARTIALS/mr_aliases.sh"
 
 ##############################
 # Alias
