@@ -65,6 +65,13 @@ alias psp="phpspec"
 alias bh="behat"
 
 ####################
+# Git
+####################
+alias gcot="git checkout testing"
+alias gcos="git checkout staging"
+alias gcom="git checkout master"
+
+####################
 # Npm
 ####################
 # alias nb="npm run build"
