@@ -3,7 +3,7 @@
 ####################
 # Mac
 ####################
-alias ls="exa"
+# alias ls="exa"
 alias bps="brew-php-switcher"
 alias bench="hyperfine"
 alias readlink="greadlink" # from coreutils
