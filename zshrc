@@ -41,6 +41,7 @@ ZSH_THEME="taybalt"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
+    artisan
     brew
     git
     wd
@@ -49,6 +50,11 @@ plugins=(
     composer
     ssh-agent
 )
+
+##############################
+# Shortcut Keys
+##############################
+bindkey \^K kill-line
 
 ##############################
 # Artisan plugin variables
@@ -75,7 +81,6 @@ source $ZSH/oh-my-zsh.sh
 # Functions
 ##############################
 source "$PARTIALS/function.sh"
-source "$PARTIALS/mr_aliases.sh"
 
 ##############################
 # Alias
@@ -85,16 +90,21 @@ source "$PARTIALS/alias.sh"
 ##############################
 # Environment Variables
 ##############################
+export GOPATH="$HOME/go"
 export CURL_CA_BUNDLE=${HOME}/.config/valet/CA/LaravelValetCASelfSigned.pem
-export PATH=/usr/local/sbin:bin:vendor/bin:node_modules/.bin:$HOME/.composer/vendor/bin:$HOME/.bin:$PATH
-export REDIS_HOST="127.0.0.1"
-export REDIS_PORT=6379
+export PATH=$HOME/Projects/kkbox/ci-docker-image/docker-tools:$PATH
+export PATH=$HOME/Projects/kkbox/kkbox-shell-tools:$PATH
+export PATH=$GOPATH/bin:$HOME/.composer/vendor/bin:$HOME/.bin:$HOME/.deno/bin:$PATH
+export PATH=/usr/local/sbin:bin:vendor/bin:node_modules/.bin:$PATH
+#export REDIS_HOST="127.0.0.1"
+#export REDIS_PORT=6379
 export APP_ENV="local"
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 export HISTTIMEFORMAT="%d/%m/%y %T "
+export EDITOR="vim"
 
 ##############################
 # Iterm 2
@@ -120,3 +130,12 @@ export HISTTIMEFORMAT="%d/%m/%y %T "
 # Thefuck
 ##############################
 [ -f "/usr/local/bin/thefuck" ] && eval $(thefuck --alias)
+
+##############################
+# HashiCorp
+##############################
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C $(which vault) vault
+complete -o nospace -C $(which nomad) nomad
+export VAULT_ADDR='http://127.0.0.1:8200'
+export NOMAD_ADDR='http://127.0.0.1:4646'
