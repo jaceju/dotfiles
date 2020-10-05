@@ -12,6 +12,11 @@ kcd() {
     cd ~/Projects/kkbox/$1
 }
 
+## 切換到實驗用目錄
+ecd() {
+    cd ~/Projects/experiment/$1
+}
+
 ## 執行多次指令
 run() {
     number=$1
