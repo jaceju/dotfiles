@@ -69,8 +69,9 @@ PARTIALS="$HOME/.dotfiles/zsh/partials"
 ##############################
 # ssh-agent
 ##############################
+zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa_kkbox
-zstyle :omz:plugins:ssh-agent lifetime 72h
+zstyle :omz:plugins:ssh-agent lifetime 30d
 
 ##############################
 # Oh my zsh
@@ -92,8 +93,9 @@ source "$PARTIALS/alias.sh"
 ##############################
 export GOPATH="$HOME/go"
 export CURL_CA_BUNDLE=${HOME}/.config/valet/CA/LaravelValetCASelfSigned.pem
-export PATH=$HOME/Projects/kkbox/ci-docker-image/docker-tools:$PATH
-export PATH=$HOME/Projects/kkbox/kkbox-shell-tools:$PATH
+export PATH=$HOME/Projects/kkbox/web/maintain-tools:$PATH
+export PATH=$HOME/Projects/kkbox/web/ci-docker-image/docker-tools:$PATH
+export PATH=$HOME/Projects/kkbox/jaceju/kkbox-shell-tools:$PATH
 export PATH=$GOPATH/bin:$HOME/.composer/vendor/bin:$HOME/.bin:$HOME/.deno/bin:$PATH
 export PATH=/usr/local/sbin:bin:vendor/bin:node_modules/.bin:$PATH
 #export REDIS_HOST="127.0.0.1"
